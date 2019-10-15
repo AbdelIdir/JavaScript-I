@@ -5,7 +5,12 @@
 let inventory = [
   { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
   { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
-  { id: 3, car_make: "Land Rover", car_model: "Defender Ice Edition", car_year: 2010 },
+  {
+    id: 3,
+    car_make: "Land Rover",
+    car_model: "Defender Ice Edition",
+    car_year: 2010
+  },
   { id: 4, car_make: "Honda", car_model: "Accord", car_year: 1983 },
   { id: 5, car_make: "Mitsubishi", car_model: "Galant", car_year: 1990 },
   { id: 6, car_make: "Honda", car_model: "Accord", car_year: 1995 },
@@ -18,7 +23,12 @@ let inventory = [
   { id: 13, car_make: "Chevrolet", car_model: "Cavalier", car_year: 1997 },
   { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 },
   { id: 15, car_make: "Dodge", car_model: "Intrepid", car_year: 2000 },
-  { id: 16, car_make: "Mitsubishi", car_model: "Montero Sport", car_year: 2001 },
+  {
+    id: 16,
+    car_make: "Mitsubishi",
+    car_model: "Montero Sport",
+    car_year: 2001
+  },
   { id: 17, car_make: "Buick", car_model: "Skylark", car_year: 1987 },
   { id: 18, car_make: "Geo", car_model: "Prizm", car_year: 1995 },
   { id: 19, car_make: "Oldsmobile", car_model: "Bravada", car_year: 1994 },
@@ -76,17 +86,9 @@ let inventory = [
 // ==== Challenge 1 ====
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
 
-for (let i = 0; i < inventory.length ; i++){
-
-  if ( inventory[i].id === 33){
-    
-console.log(`Car 33 is a ${inventory[i].car_year}  , ${inventory[i].car_make} , ${inventory[i].car_model}`);
-  }
-}
-
-
-
-
+console.log(
+  `Car 33 is a ${inventory[32].car_year}, ${inventory[32].car_make}, ${inventory[32].car_model}`
+);
 
 
 
@@ -103,60 +105,48 @@ for ( let i = 0; i < inventory.length; i++){
 
 
 
-
-
-
-
-
-
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 let carModels = [];
 
-for ( let i = 0; i < inventory.length; i++){
-  carModels.push(inventory[i].car_model)
+
+for (let i = 0; i < inventory.length; i++) {
+  // Execute something here
+  carModels.push(inventory[i].car_model);
 }
 
- carModelsSorted = carModels.sort();
-  console.log(carModelsSorted);
-
-
-
-
-
-
+let carModelsSorted = [carModels.sort()];
+console.log(carModelsSorted);
 
 
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
+
 let carYears = [];
 
-for ( let i = 0; i < inventory.length; i++ ){
-  carYears.push(inventory[i].car_year)
+
+for (let i = 0; i < inventory.length; i++) {
+  carYears.push(inventory[i].car_year);
 }
-
-
 
 console.log(carYears);
 
 
-
-
-
-
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
+
 let oldCars = [];
 
-for( let i = 0; i < carYears.length; i++){
-  if(carYears[i] < 2000){
-    oldCars.push(carYears[i])
+
+for (let i = 0; i < inventory.length; i++) {
+  if (inventory[i].car_year < 2000) {
+    oldCars.push(inventory[i].car_year);
   }
 }
 
-console.log(oldCars.length);
 
+console.log(oldCars.length);
 
 
 
@@ -165,13 +155,16 @@ console.log(oldCars.length);
 
 let BMWAndAudi = [];
 
-for (let i = 0; i < inventory.length; i++){
-  if (inventory[i].car_make === "Audi" || inventory[i].car_make === " BMW") {
-    BMWAndAudi.push(inventory[i])
 
+for (let i = 0; i < inventory.length; i++) {
+  if (
+    inventory[i].car_make.includes("BMW") ||
+    inventory[i].car_make.includes("Audi")
+  ) {
+    BMWAndAudi.push(inventory[i]);
   }
 }
 
+var myCoolCars = JSON.stringify(BMWAndAudi);
 
 
-console.log(BMWAndAudi);
